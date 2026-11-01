@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seed Phrase Generator (offline)</title>
+<link rel="stylesheet" href="/static/style.css"></head><body><main>
+<header><div class="logo">&#128272;</div><h1>Seed Phrase Generator</h1><p>BIP39 &middot; 2048 words &middot; sab kuch aapke device par</p></header>
+<div class="warn"><span>Asli paise ke wallet ke liye ye tool mat use karo. Wallet app ya hardware wallet ki apni phrase use karo. Phrase kisi ko mat dikhao.</span></div>
+<section class="card">
+<div class="row">
+<select id="len" aria-label="Words"><option value="12">12 words</option><option value="24">24 words</option></select>
+<button class="p" id="go">Phrase banao</button>
+<button id="copy">Copy</button>
+</div>
+<div class="row"><label><input type="checkbox" id="hide"> Words chhupao</label></div>
+<div id="cnt" class="cnt"></div>
+<ol id="grid"></ol>
+<textarea id="txt" readonly rows="3" aria-label="Phrase text"></textarea>
+<div id="msg" role="status"></div>
+</section>
+<section class="card">
+<h2>Phrase checker</h2>
+<p>12 ya 24 words daalo, pata chalega ki valid BIP39 phrase hai ya nahi. Asli wallet ki phrase mat daalna.</p>
+<textarea id="chk" rows="3" placeholder="word1 word2 word3 ..." autocomplete="off" autocapitalize="off" spellcheck="false"></textarea>
+<div class="row chkrow"><button id="chkgo">Check karo</button></div>
+<div id="chkout" role="status"></div>
+</section>
+<section class="card">
+<h2>Ye phrase kaise bani</h2>
+<p>Random bits, checksum, phir 11-bit ke hisaab se words.</p>
+<div id="how"></div>
+</section>
+</main>
+<script src="/static/app.js"></script>
+</body></html>
